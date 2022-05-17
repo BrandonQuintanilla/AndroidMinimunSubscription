@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MinimunSuscription</string>
+    <string name="message_subscribed">Thank you for subscribing! You have infinite gas!</string>
+</resources>
