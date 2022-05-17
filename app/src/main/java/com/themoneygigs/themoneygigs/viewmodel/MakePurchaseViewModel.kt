@@ -21,20 +21,12 @@ class MakePurchaseViewModel(private val tdr: TrivialDriveRepository) : ViewModel
     companion object {
         val TAG = "TrivialDrive:" + MakePurchaseViewModel::class.java.simpleName
         private val skuToResourceIdMap: MutableMap<String, Int> = HashMap()
-
-        init {
-/*            skuToResourceIdMap[TrivialDriveRepository.SKU_GAS] = R.drawable.buy_gas
-            skuToResourceIdMap[TrivialDriveRepository.SKU_PREMIUM] = R.drawable.upgrade_app
-            skuToResourceIdMap[TrivialDriveRepository.SKU_INFINITE_GAS_MONTHLY] = R.drawable.get_infinite_gas*/
-//            skuToResourceIdMap[TrivialDriveRepository.SKU_INFINITE_GAS_YEARLY] = R.drawable.get_infinite_gas
-        }
     }
 
     class SkuDetails internal constructor(val sku: String, tdr: TrivialDriveRepository) {
         val title = tdr.getSkuTitle(sku).asLiveData()
         val description = tdr.getSkuDescription(sku).asLiveData()
         val price = tdr.getSkuPrice(sku).asLiveData()
-//        val iconDrawableId = skuToResourceIdMap[sku]!!
     }
 
     fun getSkuDetails(sku: String): SkuDetails {

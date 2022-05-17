@@ -15,17 +15,13 @@ class App : Application() {
     inner class AppContainer {
         private val applicationScope = GlobalScope
 
-        //        private val gameStateModel = GameStateModel(this@TrivialDriveApplication)
         private val billingDataSource = BillingDataSource.getInstance(
             this@App,
             applicationScope,
-//            TrivialDriveRepository.INAPP_SKUS,
             TrivialDriveRepository.SUBSCRIPTION_SKUS
-//            TrivialDriveRepository.AUTO_CONSUME_SKUS
         )
         val trivialDriveRepository = TrivialDriveRepository(
             billingDataSource,
-//            gameStateModel,
             applicationScope
         )
     }
